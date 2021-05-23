@@ -1,0 +1,17 @@
+﻿<Window x:Class="ReorderListBoxSample.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:trans="clr-namespace:PixelLab.Wpf;assembly=PixelLab.Wpf"
+    Title="ReorderListBoxSample" Height="401" Width="641">
+    <Grid>
+        <trans:ReorderListBox Name="ReorderList" ItemsSource="{Binding}"
+                              ReorderRequested="ReorderList_ReorderRequested">
+            <trans:ReorderListBox.ItemTemplate>
+                <DataTemplate>
+                    <Rectangle Height="70" Width="500" Fill="{Binding}"
+                               trans:ReorderListBox.IsDragElement="True" />
+                </DataTemplate>
+            </trans:ReorderListBox.ItemTemplate>
+        </trans:ReorderListBox>
+    </Grid>
+</Window>
